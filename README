@@ -1,0 +1,77 @@
+NAME
+    Device::SMBus - Perl interface for smbus using libi2c-dev library.
+
+VERSION
+    version 0.02
+
+SYNOPSIS
+       use Device::SMBus;
+       $dev = Device::SMBus->new(
+         I2CBusDevicePath => '/dev/i2c-1',
+         I2CDeviceAddress => 0x1e,
+       );
+       print $dev->readByteData(0x20);
+
+DESCRIPTION
+    This is a perl interface to smbus interface using libi2c-dev library.
+
+ATTRIBUTES
+  I2CBusDevicePath
+    Device path of the I2C Device.
+
+     * On Raspberry Pi Model A this would usually be /dev/i2c-0 if you are using the default pins.
+     * On Raspberry Pi Model B this would usually be /dev/i2c-1 if you are using the default pins.
+
+  I2CDeviceAddress
+    This is the Address of the device on the I2C bus, this is usually
+    available in the device Datasheet.
+
+     * for /dev/i2c-0 look at output of `sudo i2cdetect -y 0' 
+     * for /dev/i2c-1 look at output of `sudo i2cdetect -y 1'
+
+METHODS
+  readByteData
+    $self->readByteData($register_address)
+
+  writeByteData
+    $self->writeByteData($register_address,$value)
+
+USAGE
+    *   This module provides a simplified object oriented interface to the
+        libi2c-dev library for accessing electronic peripherals connected on
+        the I2C bus. It uses Mo, a scaled down version of Moose without any
+        data checks to improve speed.
+
+see ALSO
+    *   Mo
+
+    *   IO::File
+
+    *   Fcntl
+
+SUPPORT
+  Bugs / Feature Requests
+    Please report any bugs or feature requests through github at
+    <https://github.com/shantanubhadoria/device-smbus/issues>. You will be
+    notified automatically of any progress on your issue.
+
+  Source Code
+    This is open source software. The code repository is available for
+    public review and contribution under the terms of the license.
+
+    <https://github.com/shantanubhadoria/device-smbus>
+
+      git clone git://github.com/shantanubhadoria/device-smbus.git
+
+AUTHOR
+    Shantanu Bhadoria <shantanu at cpan dott org>
+
+CONTRIBUTOR
+    Shantanu Bhadoria <shantanu@cpan.org>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2013 by Shantanu Bhadoria.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+
