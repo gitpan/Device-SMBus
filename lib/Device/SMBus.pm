@@ -13,7 +13,7 @@ package Device::SMBus;
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
 #
-our $VERSION = '0.02'; # VERSION
+our $VERSION = '0.03'; # VERSION
 
 use 5.010000;
 
@@ -69,6 +69,8 @@ sub writeByteData {
         $value );
 }
 
+# Preloaded methods go here.
+
 sub DEMOLISH {
     my ($self) = @_;
     $self->I2CBusFileHandle->close();
@@ -86,7 +88,7 @@ Device::SMBus - Perl interface for smbus using libi2c-dev library.
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 
