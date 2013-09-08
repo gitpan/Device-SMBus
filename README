@@ -2,7 +2,7 @@ NAME
     Device::SMBus - Perl interface for smbus using libi2c-dev library.
 
 VERSION
-    version 0.04
+    version 0.05
 
 SYNOPSIS
        use Device::SMBus;
@@ -30,20 +30,38 @@ ATTRIBUTES
      * for /dev/i2c-1 look at output of `sudo i2cdetect -y 1'
 
 METHODS
+  writeQuick
+    $self->writeQuick($value)
+
+  readByte
+    $self->readByte()
+
+  writeByte
+    $self->writeByte()
+
   readByteData
     $self->readByteData($register_address)
 
   writeByteData
     $self->writeByteData($register_address,$value)
 
+  readWordData
+    $self->readWordData($register_address)
+
+  writeWordData
+    $self->writeWordData($register_address,$value)
+
+  processCall
+    $self->processCall($register_address,$value)
+
 USAGE
     *   This module provides a simplified object oriented interface to the
         libi2c-dev library for accessing electronic peripherals connected on
-        the I2C bus. It uses Mo, a scaled down version of Moose without any
+        the I2C bus. It uses Moo, a scaled down version of Moose without any
         data checks to improve speed.
 
 see ALSO
-    *   Mo
+    *   Moo
 
     *   IO::File
 

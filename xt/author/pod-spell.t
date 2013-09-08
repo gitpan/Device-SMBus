@@ -19,6 +19,12 @@ smbus
 xs
 readByteData
 writeByteData
+processCall
+readByte
+readWordData
+writeByte
+writeQuick
+writeWordData
 Shantanu
 Bhadoria
 at

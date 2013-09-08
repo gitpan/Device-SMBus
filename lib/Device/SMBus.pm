@@ -13,7 +13,7 @@ package Device::SMBus;
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
 #
-our $VERSION = '0.04'; # VERSION
+our $VERSION = '0.05'; # VERSION
 
 use 5.010000;
 
@@ -65,6 +65,24 @@ sub _build_I2CBusFilenumber {
 }
 
 
+sub writeQuick {
+    my ( $self, $value ) = @_;
+    my $retval = Device::SMBus::_writeQuick( $self->I2CBusFilenumber, $value );
+}
+
+
+sub readByte {
+    my ($self) = @_;
+    my $retval = Device::SMBus::_readByte( $self->I2CBusFilenumber );
+}
+
+
+sub writeByte {
+    my ( $self, $value ) = @_;
+    my $retval = Device::SMBus::_writeByte( $self->I2CBusFilenumber, $value );
+}
+
+
 sub readByteData {
     my ( $self, $register_address ) = @_;
     my $retval = Device::SMBus::_readByteData( $self->I2CBusFilenumber,
@@ -76,6 +94,28 @@ sub writeByteData {
     my ( $self, $register_address, $value ) = @_;
     my $retval = Device::SMBus::_writeByteData( $self->I2CBusFilenumber,
         $register_address, $value );
+}
+
+
+sub readWordData {
+    my ( $self, $register_address ) = @_;
+    my $retval = Device::SMBus::_readWordData( $self->I2CBusFilenumber,
+        $register_address );
+}
+
+
+sub writeWordData {
+    my ( $self, $register_address, $value ) = @_;
+    my $retval = Device::SMBus::_writeWordData( $self->I2CBusFilenumber,
+        $register_address, $value );
+}
+
+
+sub processCall {
+    my ( $self, $register_address, $value ) = @_;
+    my $retval =
+      Device::SMBus::_processCall( $self->I2CBusFilenumber, $register_address,
+        $value );
 }
 
 # Preloaded methods go here.
@@ -97,7 +137,7 @@ Device::SMBus - Perl interface for smbus using libi2c-dev library.
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 SYNOPSIS
 
@@ -130,6 +170,18 @@ This is the Address of the device on the I2C bus, this is usually available in t
 
 =head1 METHODS
 
+=head2 writeQuick
+
+$self->writeQuick($value)
+
+=head2 readByte
+
+$self->readByte()
+
+=head2 writeByte
+
+$self->writeByte()
+
 =head2 readByteData
 
 $self->readByteData($register_address)
@@ -138,13 +190,25 @@ $self->readByteData($register_address)
 
 $self->writeByteData($register_address,$value)
 
+=head2 readWordData
+
+$self->readWordData($register_address)
+
+=head2 writeWordData
+
+$self->writeWordData($register_address,$value)
+
+=head2 processCall
+
+$self->processCall($register_address,$value)
+
 =head1 USAGE
 
 =over
 
 =item *
 
-This module provides a simplified object oriented interface to the libi2c-dev library for accessing electronic peripherals connected on the I2C bus. It uses Mo, a scaled down version of Moose without any data checks to improve speed.
+This module provides a simplified object oriented interface to the libi2c-dev library for accessing electronic peripherals connected on the I2C bus. It uses Moo, a scaled down version of Moose without any data checks to improve speed.
 
 =back
 
@@ -154,7 +218,7 @@ This module provides a simplified object oriented interface to the libi2c-dev li
 
 =item *
 
-L<Mo>
+L<Moo>
 
 =item *
 
