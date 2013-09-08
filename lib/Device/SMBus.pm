@@ -13,12 +13,12 @@ package Device::SMBus;
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
 #
-our $VERSION = '0.03'; # VERSION
+our $VERSION = '0.04'; # VERSION
 
 use 5.010000;
 
 # Dependencies
-use Mo;
+use Moo;
 use Carp;
 
 use IO::File;
@@ -33,14 +33,19 @@ use constant I2C_SLAVE => 0x0703;
 has I2CBusDevicePath => ( is => 'ro', );
 
 has I2CBusFileHandle => (
-    is         => 'ro',
-    lazy_build => 1,
+    is      => 'ro',
+    lazy    => 1,
+    builder => '_build_I2CBusFileHandle',
 );
 
 
 has I2CDeviceAddress => ( is => 'ro', );
 
-has I2CBusFilenumber => ( is => 'ro', );
+has I2CBusFilenumber => (
+    is      => 'ro',
+    lazy    => 1,
+    builder => '_build_I2CBusFilenumber',
+);
 
 sub _build_I2CBusFileHandle {
     my ($self) = @_;
@@ -49,9 +54,14 @@ sub _build_I2CBusFileHandle {
         croak "Unable to open I2C Device File at $self->I2CBusDevicePath";
         return -1;
     }
-    $self->I2CBusFilenumber( $fh->fileno() );
     $fh->ioctl( I2C_SLAVE, $self->I2CDeviceAddress );
     return $fh;
+}
+
+# Implicitly Call the lazy builder for the file handle by using it and get the fileno
+sub _build_I2CBusFilenumber {
+    my ($self) = @_;
+    $self->I2CBusFileHandle->fileno();
 }
 
 
@@ -64,9 +74,8 @@ sub readByteData {
 
 sub writeByteData {
     my ( $self, $register_address, $value ) = @_;
-    my $retval =
-      Device::SMBus::_readByteData( $self->I2CBusFilenumber, $register_address,
-        $value );
+    my $retval = Device::SMBus::_writeByteData( $self->I2CBusFilenumber,
+        $register_address, $value );
 }
 
 # Preloaded methods go here.
@@ -88,7 +97,7 @@ Device::SMBus - Perl interface for smbus using libi2c-dev library.
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 
