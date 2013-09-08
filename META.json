@@ -43,7 +43,7 @@
             "Carp" : "0",
             "Fcntl" : "0",
             "IO::File" : "0",
-            "Moo" : "0",
+            "Moose" : "0",
             "XSLoader" : "0",
             "constant" : "0",
             "perl" : "5.010000",
@@ -65,7 +65,7 @@
    "provides" : {
       "Device::SMBus" : {
          "file" : "lib/Device/SMBus.pm",
-         "version" : "0.05"
+         "version" : "0.06"
       }
    },
    "release_status" : "stable",
@@ -80,7 +80,7 @@
          "web" : "https://github.com/shantanubhadoria/device-smbus"
       }
    },
-   "version" : "0.05",
+   "version" : "0.06",
    "x_contributors" : [
       "Shantanu Bhadoria <shantanu@cpan.org>"
    ]

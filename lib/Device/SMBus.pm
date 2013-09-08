@@ -13,12 +13,12 @@ package Device::SMBus;
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
 #
-our $VERSION = '0.05'; # VERSION
+our $VERSION = '0.06'; # VERSION
 
 use 5.010000;
 
 # Dependencies
-use Moo;
+use Moose;
 use Carp;
 
 use IO::File;
@@ -137,7 +137,7 @@ Device::SMBus - Perl interface for smbus using libi2c-dev library.
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
@@ -208,7 +208,7 @@ $self->processCall($register_address,$value)
 
 =item *
 
-This module provides a simplified object oriented interface to the libi2c-dev library for accessing electronic peripherals connected on the I2C bus. It uses Moo, a scaled down version of Moose without any data checks to improve speed.
+This module provides a simplified object oriented interface to the libi2c-dev library for accessing electronic peripherals connected on the I2C bus. It uses Moose.
 
 =back
 
@@ -218,7 +218,7 @@ This module provides a simplified object oriented interface to the libi2c-dev li
 
 =item *
 
-L<Moo>
+L<Moose>
 
 =item *
 

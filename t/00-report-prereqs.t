@@ -18,7 +18,7 @@ my @modules = qw(
   File::Temp
   IO::File
   List::Util
-  Moo
+  Moose
   Test::More
   XSLoader
   constant

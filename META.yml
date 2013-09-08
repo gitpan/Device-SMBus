@@ -29,12 +29,12 @@ no_index:
 provides:
   Device::SMBus:
     file: lib/Device/SMBus.pm
-    version: 0.05
+    version: 0.06
 requires:
   Carp: 0
   Fcntl: 0
   IO::File: 0
-  Moo: 0
+  Moose: 0
   XSLoader: 0
   constant: 0
   perl: 5.010000
@@ -44,6 +44,6 @@ resources:
   bugtracker: https://github.com/shantanubhadoria/device-smbus/issues
   homepage: https://metacpan.org/release/Device-SMBus
   repository: git://github.com/shantanubhadoria/device-smbus.git
-version: 0.05
+version: 0.06
 x_contributors:
   - 'Shantanu Bhadoria <shantanu@cpan.org>'

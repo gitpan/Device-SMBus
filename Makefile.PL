@@ -31,7 +31,7 @@ my %WriteMakefileArgs = (
     "Carp" => 0,
     "Fcntl" => 0,
     "IO::File" => 0,
-    "Moo" => 0,
+    "Moose" => 0,
     "XSLoader" => 0,
     "constant" => 0,
     "strict" => 0,
@@ -45,7 +45,7 @@ my %WriteMakefileArgs = (
     "List::Util" => 0,
     "Test::More" => 0
   },
-  "VERSION" => "0.05",
+  "VERSION" => "0.06",
   "test" => {
     "TESTS" => "t/*.t"
   }
