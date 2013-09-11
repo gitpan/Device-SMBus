@@ -13,7 +13,7 @@ package Device::SMBus;
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
 #
-our $VERSION = '0.06'; # VERSION
+our $VERSION = '0.07'; # VERSION
 
 use 5.010000;
 
@@ -97,6 +97,15 @@ sub writeByteData {
 }
 
 
+sub readNBytes {
+    my ( $self, $reg, $numBytes ) = @_;
+    my $retval = 0;
+    $retval = ( $retval << 8 ) | $self->readByteData( $reg + $numBytes - $_ )
+      for ( 1 .. $numBytes );
+    return $retval;
+}
+
+
 sub readWordData {
     my ( $self, $register_address ) = @_;
     my $retval = Device::SMBus::_readWordData( $self->I2CBusFilenumber,
@@ -137,7 +146,7 @@ Device::SMBus - Perl interface for smbus using libi2c-dev library.
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 SYNOPSIS
 
@@ -189,6 +198,14 @@ $self->readByteData($register_address)
 =head2 writeByteData
 
 $self->writeByteData($register_address,$value)
+
+=head2 readNBytes
+
+$self->readNBytes($lowest_byte_address, $number_of_bytes);
+
+Read together N bytes of Data in linear register order. i.e. to read from 0x28,0x29,0x2a 
+
+$self->readNBytes(0x28,3);
 
 =head2 readWordData
 
@@ -253,9 +270,19 @@ L<https://github.com/shantanubhadoria/device-smbus>
 
 Shantanu Bhadoria <shantanu at cpan dott org>
 
-=head1 CONTRIBUTOR
+=head1 CONTRIBUTORS
+
+=over 4
+
+=item *
+
+Shantanu <shantanu@cpan.org>
+
+=item *
 
 Shantanu Bhadoria <shantanu@cpan.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

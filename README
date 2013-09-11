@@ -2,7 +2,7 @@ NAME
     Device::SMBus - Perl interface for smbus using libi2c-dev library.
 
 VERSION
-    version 0.06
+    version 0.07
 
 SYNOPSIS
        use Device::SMBus;
@@ -45,6 +45,14 @@ METHODS
   writeByteData
     $self->writeByteData($register_address,$value)
 
+  readNBytes
+    $self->readNBytes($lowest_byte_address, $number_of_bytes);
+
+    Read together N bytes of Data in linear register order. i.e. to read
+    from 0x28,0x29,0x2a
+
+    $self->readNBytes(0x28,3);
+
   readWordData
     $self->readWordData($register_address)
 
@@ -83,8 +91,10 @@ SUPPORT
 AUTHOR
     Shantanu Bhadoria <shantanu at cpan dott org>
 
-CONTRIBUTOR
-    Shantanu Bhadoria <shantanu@cpan.org>
+CONTRIBUTORS
+    *   Shantanu <shantanu@cpan.org>
+
+    *   Shantanu Bhadoria <shantanu@cpan.org>
 
 COPYRIGHT AND LICENSE
     This software is copyright (c) 2013 by Shantanu Bhadoria.
