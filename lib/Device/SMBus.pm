@@ -13,7 +13,7 @@ package Device::SMBus;
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
 #
-our $VERSION = '0.08'; # VERSION
+our $VERSION = '0.09'; # VERSION
 
 use 5.010000;
 
@@ -146,7 +146,7 @@ Device::SMBus - Perl interface for smbus using libi2c-dev library.
 
 =head1 VERSION
 
-version 0.08
+version 0.09
 
 =head1 SYNOPSIS
 

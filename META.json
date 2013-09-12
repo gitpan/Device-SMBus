@@ -65,7 +65,7 @@
    "provides" : {
       "Device::SMBus" : {
          "file" : "lib/Device/SMBus.pm",
-         "version" : "0.08"
+         "version" : "0.09"
       }
    },
    "release_status" : "stable",
@@ -80,7 +80,7 @@
          "web" : "https://github.com/shantanubhadoria/device-smbus"
       }
    },
-   "version" : "0.08",
+   "version" : "0.09",
    "x_contributors" : [
       "Neil Bowers <neil@bowers.com>",
       "Shantanu <shantanu@cpan.org>",
