@@ -13,7 +13,7 @@ package Device::SMBus;
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
 #
-our $VERSION = '0.09'; # VERSION
+our $VERSION = '0.10'; # VERSION
 
 use 5.010000;
 
@@ -26,6 +26,7 @@ use Fcntl;
 
 require XSLoader;
 XSLoader::load( 'Device::SMBus', $VERSION );
+
 
 use constant I2C_SLAVE => 0x0703;
 
@@ -62,6 +63,12 @@ sub _build_I2CBusFileHandle {
 sub _build_I2CBusFilenumber {
     my ($self) = @_;
     $self->I2CBusFileHandle->fileno();
+}
+
+
+sub fileError {
+    my ($self) = @_;
+    return $self->I2CBusFileHandle->error();
 }
 
 
@@ -129,6 +136,7 @@ sub processCall {
 
 # Preloaded methods go here.
 
+
 sub DEMOLISH {
     my ($self) = @_;
     $self->I2CBusFileHandle->close();
@@ -146,7 +154,7 @@ Device::SMBus - Perl interface for smbus using libi2c-dev library.
 
 =head1 VERSION
 
-version 0.09
+version 0.10
 
 =head1 SYNOPSIS
 
@@ -160,6 +168,10 @@ version 0.09
 =head1 DESCRIPTION
 
 This is a perl interface to smbus interface using libi2c-dev library. 
+
+=head1 CONSTANTS
+
+=head2 I2C_SLAVE
 
 =head1 ATTRIBUTES
 
@@ -178,6 +190,10 @@ This is the Address of the device on the I2C bus, this is usually available in t
  * for /dev/i2c-1 look at output of `sudo i2cdetect -y 1' 
 
 =head1 METHODS
+
+=head2 fileError
+
+returns IO::Handle->error() for the device handle since the last clearerr
 
 =head2 writeQuick
 
@@ -218,6 +234,10 @@ $self->writeWordData($register_address,$value)
 =head2 processCall
 
 $self->processCall($register_address,$value)
+
+=head2 DEMOLISH
+
+Destructor
 
 =head1 USAGE
 

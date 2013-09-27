@@ -27,6 +27,8 @@ writeByte
 writeQuick
 writeWordData
 readNBytes
+Destructor
+fileError
 Shantanu
 Bhadoria
 at

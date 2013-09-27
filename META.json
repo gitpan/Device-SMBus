@@ -18,7 +18,8 @@
          "t",
          "xt",
          "examples",
-         "corpus"
+         "corpus",
+         "inc"
       ],
       "package" : [
          "DB"
@@ -65,7 +66,7 @@
    "provides" : {
       "Device::SMBus" : {
          "file" : "lib/Device/SMBus.pm",
-         "version" : "0.09"
+         "version" : "0.10"
       }
    },
    "release_status" : "stable",
@@ -80,7 +81,7 @@
          "web" : "https://github.com/shantanubhadoria/device-smbus"
       }
    },
-   "version" : "0.09",
+   "version" : "0.10",
    "x_contributors" : [
       "Neil Bowers <neil@bowers.com>",
       "Shantanu <shantanu@cpan.org>",
