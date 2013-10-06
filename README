@@ -2,7 +2,7 @@ NAME
     Device::SMBus - Perl interface for smbus using libi2c-dev library.
 
 VERSION
-    version 0.11
+    version 1.01
 
 SYNOPSIS
        use Device::SMBus;
@@ -15,8 +15,6 @@ SYNOPSIS
 DESCRIPTION
     This is a perl interface to smbus interface using libi2c-dev library.
 
-CONSTANTS
-  I2C_SLAVE
 ATTRIBUTES
   I2CBusDevicePath
     Device path of the I2C Device.
@@ -71,6 +69,8 @@ METHODS
   DEMOLISH
     Destructor
 
+CONSTANTS
+  I2C_SLAVE
 USAGE
     *   This module provides a simplified object oriented interface to the
         libi2c-dev library for accessing electronic peripherals connected on

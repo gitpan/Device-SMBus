@@ -13,7 +13,7 @@ package Device::SMBus;
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
 #
-our $VERSION = '0.11'; # VERSION
+our $VERSION = '1.01'; # VERSION
 
 # Dependencies
 use 5.010000;
@@ -154,7 +154,7 @@ Device::SMBus - Perl interface for smbus using libi2c-dev library.
 
 =head1 VERSION
 
-version 0.11
+version 1.01
 
 =head1 SYNOPSIS
 
@@ -168,10 +168,6 @@ version 0.11
 =head1 DESCRIPTION
 
 This is a perl interface to smbus interface using libi2c-dev library. 
-
-=head1 CONSTANTS
-
-=head2 I2C_SLAVE
 
 =head1 ATTRIBUTES
 
@@ -238,6 +234,10 @@ $self->processCall($register_address,$value)
 =head2 DEMOLISH
 
 Destructor
+
+=head1 CONSTANTS
+
+=head2 I2C_SLAVE
 
 =head1 USAGE
 

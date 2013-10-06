@@ -30,7 +30,7 @@ no_index:
 provides:
   Device::SMBus:
     file: lib/Device/SMBus.pm
-    version: 0.11
+    version: 1.01
 requires:
   Carp: 0
   Fcntl: 0
@@ -45,7 +45,7 @@ resources:
   bugtracker: https://github.com/shantanubhadoria/device-smbus/issues
   homepage: https://metacpan.org/release/Device-SMBus
   repository: git://github.com/shantanubhadoria/device-smbus.git
-version: 0.11
+version: 1.01
 x_contributors:
   - 'Neil Bowers <neil@bowers.com>'
   - 'Shantanu <shantanu@cpan.org>'
