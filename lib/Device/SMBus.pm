@@ -13,7 +13,7 @@ package Device::SMBus;
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
 #
-our $VERSION = '1.01'; # VERSION
+our $VERSION = '1.02'; # VERSION
 
 # Dependencies
 use 5.010000;
@@ -59,7 +59,7 @@ sub _build_I2CBusFileHandle {
     return $fh;
 }
 
-# Implicitly Call the lazy builder for the file handle by using it and get the fileno
+# Implicitly Call the lazy builder for the file handle by using it and get the filenumber
 sub _build_I2CBusFilenumber {
     my ($self) = @_;
     $self->I2CBusFileHandle->fileno();
@@ -154,7 +154,7 @@ Device::SMBus - Perl interface for smbus using libi2c-dev library.
 
 =head1 VERSION
 
-version 1.01
+version 1.02
 
 =head1 SYNOPSIS
 

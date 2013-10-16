@@ -2,7 +2,7 @@ NAME
     Device::SMBus - Perl interface for smbus using libi2c-dev library.
 
 VERSION
-    version 1.01
+    version 1.02
 
 SYNOPSIS
        use Device::SMBus;
