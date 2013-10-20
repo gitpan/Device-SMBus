@@ -1,10 +1,10 @@
 {
-   "abstract" : "Perl interface for smbus using libi2c-dev library.",
+   "abstract" : "Perl interface for smbus using libi2c-dev library.  ",
    "author" : [
       "Shantanu Bhadoria <shantanu at cpan dott org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300035, CPAN::Meta::Converter version 2.131560",
+   "generated_by" : "Dist::Zilla version 4.300038, CPAN::Meta::Converter version 2.132510",
    "license" : [
       "perl_5"
    ],
@@ -66,7 +66,7 @@
    "provides" : {
       "Device::SMBus" : {
          "file" : "lib/Device/SMBus.pm",
-         "version" : "1.02"
+         "version" : "1.03"
       }
    },
    "release_status" : "stable",
@@ -81,7 +81,7 @@
          "web" : "https://github.com/shantanubhadoria/device-smbus"
       }
    },
-   "version" : "1.02",
+   "version" : "1.03",
    "x_contributors" : [
       "Neil Bowers <neil@bowers.com>",
       "Shantanu <shantanu@cpan.org>",

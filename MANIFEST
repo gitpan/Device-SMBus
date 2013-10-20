@@ -6,6 +6,8 @@ META.yml
 Makefile.PL
 README
 SMBus.xs
+debian/changelog
+debian/control
 lib/Device/SMBus.pm
 ppport.h
 t/00-compile.t

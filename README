@@ -2,7 +2,7 @@ NAME
     Device::SMBus - Perl interface for smbus using libi2c-dev library.
 
 VERSION
-    version 1.02
+    version 1.03
 
 SYNOPSIS
        use Device::SMBus;
@@ -14,6 +14,41 @@ SYNOPSIS
 
 DESCRIPTION
     This is a perl interface to smbus interface using libi2c-dev library.
+
+    Prerequisites:
+
+    *   sudo apt-get install libi2c-dev i2c-tools
+
+    Enabling the I2C on a Raspberry Pi:
+
+    You will need to comment out the driver from the blacklist. currently
+    the I2C driver isn't being loaded.
+
+         sudo vim /etc/modprobe.d/raspi-blacklist.conf
+
+    Replace this line
+
+         blacklist i2c-bcm2708
+
+    with this
+
+         #blacklist i2c-bcm2708
+
+    You now need to edit the modules conf file.
+
+         sudo vim /etc/modules
+
+    Add these two lines;
+
+         i2c-dev
+         i2c-bcm2708
+
+    Now run this command(replace 1 with 0 for older model Pi)
+
+         sudo i2cdetect -y 1
+
+    you should now see the addresses of the i2c devices connected to your
+    i2c bus
 
 ATTRIBUTES
   I2CBusDevicePath
