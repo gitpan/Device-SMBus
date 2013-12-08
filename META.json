@@ -4,7 +4,7 @@
       "Shantanu Bhadoria <shantanu at cpan dott org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300038, CPAN::Meta::Converter version 2.132510",
+   "generated_by" : "Dist::Zilla version 4.300039, CPAN::Meta::Converter version 2.132510",
    "license" : [
       "perl_5"
    ],
@@ -55,9 +55,7 @@
       "test" : {
          "requires" : {
             "ExtUtils::MakeMaker" : "0",
-            "File::Find" : "0",
             "File::Spec::Functions" : "0",
-            "File::Temp" : "0",
             "List::Util" : "0",
             "Test::More" : "0"
          }
@@ -66,7 +64,7 @@
    "provides" : {
       "Device::SMBus" : {
          "file" : "lib/Device/SMBus.pm",
-         "version" : "1.03"
+         "version" : "1.04"
       }
    },
    "release_status" : "stable",
@@ -81,7 +79,7 @@
          "web" : "https://github.com/shantanubhadoria/device-smbus"
       }
    },
-   "version" : "1.03",
+   "version" : "1.04",
    "x_contributors" : [
       "Neil Bowers <neil@bowers.com>",
       "Shantanu <shantanu@cpan.org>",

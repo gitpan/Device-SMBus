@@ -1,6 +1,16 @@
 Changelog for Device-SMBus
 
-1.03 2013-10-20T01:48:13
+1.04 2013-12-08T15:04:05
+ - including i2c-dev.h with the distribution to Avoid issues arising from
+   missing file and the munged up implementation each linux distro makes
+   with this file [Shantanu]
+
+1.03 2013-10-20T01:49:07
+ - v1.03
+   
+    - Merge branch 'master' of github.com:shantanubhadoria/Device-SMBus
+      [Shantanu]
+    - Added more documentation [Shantanu] [Shantanu]
  - Merge branch 'master' of github.com:shantanubhadoria/Device-SMBus
    [Shantanu]
  - Added more documentation [Shantanu]

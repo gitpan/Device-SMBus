@@ -1,8 +1,19 @@
-device-smbus (1.03) stable; urgency=low
+device-smbus (1.04) stable; urgency=low
+  * including i2c-dev.h with the distribution to Avoid issues arising
+    from missing file and the munged up implementation each linux distro
+    makes with this file 
+
+ -- Shantanu Bhadoria <shantanu@cpan.org>  Sun, 08 Dec 2013 23:03:57 -0000
+
+device-smbus (release-1.03) stable; urgency=low
+  * v1.03
+  - Merge branch 'master' of github.com:shantanubhadoria/Device-SMBus
+  [Shantanu]
+  - Added more documentation [Shantanu] 
   * Merge branch 'master' of github.com:shantanubhadoria/Device-SMBus 
   * Added more documentation 
 
- -- Shantanu Bhadoria <shantanu@cpan.org>  Sun, 20 Oct 2013 09:45:46 -0000
+ -- Shantanu Bhadoria <shantanu@cpan.org>  Sun, 20 Oct 2013 09:49:07 -0000
 
 device-smbus (release-1.02) stable; urgency=low
   * v1.02

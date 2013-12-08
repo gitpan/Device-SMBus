@@ -13,9 +13,7 @@ my @modules = qw(
     Carp
   ExtUtils::MakeMaker
   Fcntl
-  File::Find
   File::Spec::Functions
-  File::Temp
   IO::File
   List::Util
   Moose
