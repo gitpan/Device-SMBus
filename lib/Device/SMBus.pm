@@ -13,7 +13,7 @@ package Device::SMBus;
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
 #
-our $VERSION = '1.04'; # VERSION
+our $VERSION = '1.05'; # VERSION
 
 # Dependencies
 use 5.010000;
@@ -154,7 +154,7 @@ Device::SMBus - Perl interface for smbus using libi2c-dev library.
 
 =head1 VERSION
 
-version 1.04
+version 1.05
 
 =head1 SYNOPSIS
 
@@ -176,6 +176,20 @@ Prerequisites:
 =item *
 
 sudo apt-get install libi2c-dev i2c-tools build-essential
+
+=back
+
+If you are using Angstrom Linux use the following:
+
+=over
+
+=item *
+
+opkg install i2c-tools
+
+=item *
+
+opkg install i2c-tools-dev
 
 =back
 
@@ -349,6 +363,10 @@ Shantanu Bhadoria <shantanu.bhadoria@gmail.com>
 =item *
 
 Shantanu Bhadoria <shantanu@cpan.org>
+
+=item *
+
+root <root@beaglebone.(none)>
 
 =back
 

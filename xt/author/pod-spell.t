@@ -30,6 +30,7 @@ readNBytes
 Destructor
 fileError
 conf
+opkg
 Shantanu
 Bhadoria
 at
@@ -39,6 +40,7 @@ org
 Neil
 Bowers
 neil
+root
 lib
 Device
 SMBus

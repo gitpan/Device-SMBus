@@ -1,9 +1,21 @@
-device-smbus (1.04) stable; urgency=low
+device-smbus (1.05) stable; urgency=low
+  * adding spelling stopwords 
+  * Merge branch 'master' of github.com:shantanubhadoria/Device-SMBus 
+  * Adding information for Angstrom Linux 
+
+ -- Shantanu Bhadoria <shantanu@cpan.org>  Sun, 08 Dec 2013 23:06:33 -0000
+
+device-smbus (release-1.04) stable; urgency=low
+  * v1.04
+  - including i2c-dev.h with the distribution to Avoid issues arising
+    from
+  missing file and the munged up implementation each linux distro makes
+  with this file [Shantanu] 
   * including i2c-dev.h with the distribution to Avoid issues arising
     from missing file and the munged up implementation each linux distro
     makes with this file 
 
- -- Shantanu Bhadoria <shantanu@cpan.org>  Sun, 08 Dec 2013 23:03:57 -0000
+ -- Shantanu Bhadoria <shantanu@cpan.org>  Sun, 08 Dec 2013 23:04:49 -0000
 
 device-smbus (release-1.03) stable; urgency=low
   * v1.03

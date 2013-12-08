@@ -1,6 +1,18 @@
 Changelog for Device-SMBus
 
-1.04 2013-12-08T15:04:05
+1.05 2013-12-08T15:06:41
+ - adding spelling stopwords [Shantanu]
+ - Merge branch 'master' of github.com:shantanubhadoria/Device-SMBus
+   [Shantanu]
+ - Adding information for Angstrom Linux [root]
+
+1.04 2013-12-08T15:04:49
+ - v1.04
+   
+    - including i2c-dev.h with the distribution to Avoid issues arising
+   from
+      missing file and the munged up implementation each linux distro makes
+      with this file [Shantanu] [Shantanu]
  - including i2c-dev.h with the distribution to Avoid issues arising from
    missing file and the munged up implementation each linux distro makes
    with this file [Shantanu]

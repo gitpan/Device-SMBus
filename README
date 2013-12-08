@@ -2,7 +2,7 @@ NAME
     Device::SMBus - Perl interface for smbus using libi2c-dev library.
 
 VERSION
-    version 1.04
+    version 1.05
 
 SYNOPSIS
        use Device::SMBus;
@@ -18,6 +18,12 @@ DESCRIPTION
     Prerequisites:
 
     *   sudo apt-get install libi2c-dev i2c-tools build-essential
+
+    If you are using Angstrom Linux use the following:
+
+    *   opkg install i2c-tools
+
+    *   opkg install i2c-tools-dev
 
     Enabling the I2C on a Raspberry Pi:
 
@@ -143,6 +149,8 @@ CONTRIBUTORS
     *   Shantanu Bhadoria <shantanu.bhadoria@gmail.com>
 
     *   Shantanu Bhadoria <shantanu@cpan.org>
+
+    *   root <root@beaglebone.(none)>
 
 COPYRIGHT AND LICENSE
     This software is copyright (c) 2013 by Shantanu Bhadoria.
