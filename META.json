@@ -1,10 +1,10 @@
 {
-   "abstract" : "Perl interface for smbus using libi2c-dev library.  ",
+   "abstract" : "Perl interface for smbus using libi2c-dev library.",
    "author" : [
       "Shantanu Bhadoria <shantanu at cpan dott org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300039, CPAN::Meta::Converter version 2.132510",
+   "generated_by" : "Dist::Zilla version 4.300035, CPAN::Meta::Converter version 2.131560",
    "license" : [
       "perl_5"
    ],
@@ -55,7 +55,9 @@
       "test" : {
          "requires" : {
             "ExtUtils::MakeMaker" : "0",
+            "File::Find" : "0",
             "File::Spec::Functions" : "0",
+            "File::Temp" : "0",
             "List::Util" : "0",
             "Test::More" : "0"
          }
@@ -64,7 +66,7 @@
    "provides" : {
       "Device::SMBus" : {
          "file" : "lib/Device/SMBus.pm",
-         "version" : "1.05"
+         "version" : "1.06"
       }
    },
    "release_status" : "stable",
@@ -79,13 +81,11 @@
          "web" : "https://github.com/shantanubhadoria/device-smbus"
       }
    },
-   "version" : "1.05",
+   "version" : "1.06",
    "x_contributors" : [
+      "Jonathan Stowe <jns+git@gellyfish.co.uk>",
       "Neil Bowers <neil@bowers.com>",
-      "Shantanu <shantanu@cpan.org>",
-      "Shantanu Bhadoria <shantanu.bhadoria@gmail.com>",
-      "Shantanu Bhadoria <shantanu@cpan.org>",
-      "root <root@beaglebone.(none)>"
+      "Shantanu Bhadoria <shantanu att cpan dott org>"
    ]
 }
 

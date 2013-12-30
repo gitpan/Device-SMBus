@@ -6,11 +6,10 @@ META.yml
 Makefile.PL
 README
 SMBus.xs
-debian/changelog
-debian/control
 i2c-dev.h
 lib/Device/SMBus.pm
 ppport.h
+t/00-compile.t
 t/00-report-prereqs.t
 t/Device-SMBus.t
 xt/author/critic.t
