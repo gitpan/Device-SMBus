@@ -1,18 +1,18 @@
 ---
-abstract: 'Perl interface for smbus using libi2c-dev library.'
+abstract: 'Perl interface for smbus using libi2c-dev library.  '
 author:
   - 'Shantanu Bhadoria <shantanu at cpan dott org>'
 build_requires:
   ExtUtils::MakeMaker: 0
-  File::Find: 0
-  File::Spec::Functions: 0
+  File::Spec: 0
   File::Temp: 0
-  List::Util: 0
+  IO::Handle: 0
+  IPC::Open3: 0
   Test::More: 0
 configure_requires:
-  ExtUtils::MakeMaker: 6.30
+  ExtUtils::MakeMaker: 0
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300035, CPAN::Meta::Converter version 2.131560'
+generated_by: 'Dist::Zilla version 5.020, CPAN::Meta::Converter version 2.142060'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -30,7 +30,7 @@ no_index:
 provides:
   Device::SMBus:
     file: lib/Device/SMBus.pm
-    version: 1.06
+    version: 1.07
 requires:
   Carp: 0
   Fcntl: 0
@@ -45,8 +45,9 @@ resources:
   bugtracker: https://github.com/shantanubhadoria/device-smbus/issues
   homepage: https://metacpan.org/release/Device-SMBus
   repository: git://github.com/shantanubhadoria/device-smbus.git
-version: 1.06
+version: 1.07
 x_contributors:
   - 'Jonathan Stowe <jns+git@gellyfish.co.uk>'
   - 'Neil Bowers <neil@bowers.com>'
   - 'Shantanu Bhadoria <shantanu att cpan dott org>'
+  - 'wfreller <wolfgang@freller.at>'

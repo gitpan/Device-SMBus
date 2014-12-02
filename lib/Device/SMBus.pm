@@ -8,12 +8,12 @@ package Device::SMBus;
 #
 # This file is part of Device-SMBus
 #
-# This software is copyright (c) 2013 by Shantanu Bhadoria.
+# This software is copyright (c) 2014 by Shantanu Bhadoria.
 #
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
 #
-our $VERSION = '1.06'; # VERSION
+our $VERSION = '1.07'; # VERSION
 
 # Dependencies
 use 5.010000;
@@ -81,6 +81,7 @@ sub writeQuick {
 sub readByte {
     my ($self) = @_;
     my $retval = Device::SMBus::_readByte( $self->I2CBusFilenumber );
+    return $retval;
 }
 
 
@@ -94,6 +95,7 @@ sub readByteData {
     my ( $self, $register_address ) = @_;
     my $retval = Device::SMBus::_readByteData( $self->I2CBusFilenumber,
         $register_address );
+    return $retval;
 }
 
 
@@ -117,6 +119,7 @@ sub readWordData {
     my ( $self, $register_address ) = @_;
     my $retval = Device::SMBus::_readWordData( $self->I2CBusFilenumber,
         $register_address );
+    return $retval;
 }
 
 
@@ -145,6 +148,19 @@ sub writeBlockData {
     return $retval;
 }
 
+
+sub readBlockData {
+    my ( $self, $register_address, $numBytes ) = @_;
+
+    my $read_val = '0' x ($numBytes);
+
+    my $retval = Device::SMBus::_readI2CBlockData( $self->I2CBusFilenumber,
+        $register_address, $read_val );
+
+    my @result = unpack( "C*", $read_val );
+    return @result;
+}
+
 # Preloaded methods go here.
 
 
@@ -165,7 +181,7 @@ Device::SMBus - Perl interface for smbus using libi2c-dev library.
 
 =head1 VERSION
 
-version 1.06
+version 1.07
 
 =head1 SYNOPSIS
 
@@ -331,6 +347,21 @@ The register address should be one that is at the beginning of a contiguous bloc
 to the array of values passed.  Not adhering to this will almost certainly result in unexpected behaviour in
 the device.
 
+=head2 readBlockData
+
+ $self->readBlockData($register_address, $numBytes)
+
+Read $numBytes form the given register address,
+data is returned as array
+
+The register address is often 0x00 or the value your device expects
+
+common usage with micro controllers that receive and send large amounts of data:
+they almost always needs a 'command' to be written to them then they send a response:
+e.g:
+1) send 'command' with writeBlockData, or writeByteData, for example 'get last telegram'
+2) read 'response' with readBlockData of size $numBytes, controller is sending the last telegram
+
 =head2 DEMOLISH
 
 Destructor
@@ -392,6 +423,8 @@ Shantanu Bhadoria <shantanu at cpan dott org>
 
 =head1 CONTRIBUTORS
 
+=for stopwords Jonathan Stowe Neil Bowers Shantanu Bhadoria wfreller
+
 =over 4
 
 =item *
@@ -406,11 +439,15 @@ Neil Bowers <neil@bowers.com>
 
 Shantanu Bhadoria <shantanu att cpan dott org>
 
+=item *
+
+wfreller <wolfgang@freller.at>
+
 =back
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Shantanu Bhadoria.
+This software is copyright (c) 2014 by Shantanu Bhadoria.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

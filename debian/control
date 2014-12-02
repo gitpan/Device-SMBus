@@ -1,0 +1,13 @@
+Source: libdevice-smbus-perl
+Section: perl
+Priority: optional
+Maintainer: Shantanu Bhadoria <shantanu@cpan.org>
+Build-Depends: debhelper (>= 8)
+Build-Depends-Indep: perl
+Standards-Version: 3.9.2
+Homepage: http://search.cpan.org/dist/Device-SMBus/
+
+Package: libdevice-smbus-perl
+Architecture: all
+Depends: ${misc:Depends}, ${perl:Depends}
+Desciprion: Perl interface for smbus using libi2c-dev library.  
