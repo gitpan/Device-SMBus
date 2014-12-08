@@ -4,7 +4,7 @@ use warnings;
 package Device::SMBus;
 
 # PODNAME: Device::SMBus
-# ABSTRACT: Perl interface for smbus using libi2c-dev library.
+# ABSTRACT: Control and read hardware devices with i2c(SMBus)
 #
 # This file is part of Device-SMBus
 #
@@ -13,7 +13,7 @@ package Device::SMBus;
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
 #
-our $VERSION = '1.07'; # VERSION
+our $VERSION = '1.08'; # VERSION
 
 # Dependencies
 use 5.010000;
@@ -177,11 +177,11 @@ __END__
 
 =head1 NAME
 
-Device::SMBus - Perl interface for smbus using libi2c-dev library.
+Device::SMBus - Control and read hardware devices with i2c(SMBus)
 
 =head1 VERSION
 
-version 1.07
+version 1.08
 
 =head1 SYNOPSIS
 
@@ -369,6 +369,14 @@ Destructor
 =head1 CONSTANTS
 
 =head2 I2C_SLAVE
+
+=head1 NOTES
+
+I wrote this library for my Quadrotor project for controlling PWM Wave Generators ( ESC or DC motor controller ), Accelerometer, Gyroscope, Magnetometer, Altimeter, Temperature Sensor etc. However this module can also be used by anyone who wishes to read or control motherboard devices on I2C like laptop battery system, temperature or voltage sensors, fan controllers, lid switches, clock chips. Some PCI add in cards may connect to a SMBus segment.
+
+The SMBus was defined by Intel in 1995. It carries clock, data, and instructions and is based on Philips' I2C serial bus protocol. Its clock frequency range is 10 kHz to 100 kHz. (PMBus extends this to 400 kHz.) Its voltage levels and timings are more strictly defined than those of I2C, but devices belonging to the two systems are often successfully mixed on the same bus. SMBus is used as an interconnect in several platform management standards including: ASF, DASH, IPMI. 
+
+-wiki
 
 =head1 USAGE
 

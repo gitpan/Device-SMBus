@@ -1,4 +1,19 @@
-device-smbus (1.07) stable; urgency=low
+device-smbus (1.08) stable; urgency=low
+  * Modified POD documentation, added notes 
+
+ -- Shantanu Bhadoria <shantanu@cpan.org>  Mon,  8 Dec 2014 11:12:04 +0000
+
+device-smbus (release-1.07) stable; urgency=low
+  * v1.07
+  - Fixed Spelling Errors, Added new words to stopwords (Shantanu
+    Bhadoria)
+  - addding Changes (Shantanu Bhadoria)
+  - Removed Changes from git repo to avoid dzil release issues (Shantanu
+  Bhadoria)
+  - implemented readBlockData() (wfreller)
+  - Fixes #3 Added return statements to the code to help peopl more used
+    to
+  seeing them (Shantanu Bhadoria) 
   * Fixed Spelling Errors, Added new words to stopwords 
   * addding Changes 
   * Removed Changes from git repo to avoid dzil release issues 
@@ -8,7 +23,7 @@ device-smbus (1.07) stable; urgency=low
   * Fixes #3 Added return statements to the code to help peopl more used
     to seeing them 
 
- -- Shantanu Bhadoria <shantanu@cpan.org>  Tue,  2 Dec 2014 17:28:48 +0000
+ -- Shantanu Bhadoria <shantanu@cpan.org>  Tue,  2 Dec 2014 17:31:30 +0000
 
 device-smbus (release-1.06) stable; urgency=low
   * v1.06

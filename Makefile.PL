@@ -10,7 +10,7 @@ use 5.010000;
 use ExtUtils::MakeMaker;
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "Perl interface for smbus using libi2c-dev library.  ",
+  "ABSTRACT" => "Control and read hardware devices with i2c(SMBus)",
   "AUTHOR" => "Shantanu Bhadoria <shantanu at cpan dott org>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0
@@ -43,7 +43,7 @@ my %WriteMakefileArgs = (
     "IPC::Open3" => 0,
     "Test::More" => 0
   },
-  "VERSION" => "1.07",
+  "VERSION" => "1.08",
   "test" => {
     "TESTS" => "t/*.t"
   }

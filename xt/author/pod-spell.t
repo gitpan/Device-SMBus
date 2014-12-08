@@ -38,6 +38,14 @@ att
 doesnt
 raspbian
 writeBlockData
+ASF
+Accelerometer
+ESC
+IPMI
+PCI
+PMBus
+PWM
+Quadrotor
 Shantanu
 Bhadoria
 at

@@ -1,10 +1,10 @@
 {
-   "abstract" : "Perl interface for smbus using libi2c-dev library.  ",
+   "abstract" : "Control and read hardware devices with i2c(SMBus)",
    "author" : [
       "Shantanu Bhadoria <shantanu at cpan dott org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 5.020, CPAN::Meta::Converter version 2.142060",
+   "generated_by" : "Dist::Zilla version 5.025, CPAN::Meta::Converter version 2.142060",
    "license" : [
       "perl_5"
    ],
@@ -73,7 +73,7 @@
    "provides" : {
       "Device::SMBus" : {
          "file" : "lib/Device/SMBus.pm",
-         "version" : "1.07"
+         "version" : "1.08"
       }
    },
    "release_status" : "stable",
@@ -88,7 +88,7 @@
          "web" : "https://github.com/shantanubhadoria/device-smbus"
       }
    },
-   "version" : "1.07",
+   "version" : "1.08",
    "x_contributors" : [
       "Jonathan Stowe <jns+git@gellyfish.co.uk>",
       "Neil Bowers <neil@bowers.com>",
